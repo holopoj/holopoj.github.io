@@ -82,7 +82,7 @@ butter | 4848 | 1.1%
 ground black pepper | 4785 | 1.1%
 all-purpose flour | 4632 | 1.1%
 
-A couple notes.  First, the probability is out of all times any ingredient was mentioned, so even though 18,049 of the 39,774 recipes $(~=45.4%)$ of all recipes use salt, only 4.2% of all uses of any ingredient are salt.
+A couple notes.  First, the probability is out of all times any ingredient was mentioned, so even though 18,049 of the 39,774 recipes $$(\approx 45.4%)$$ of all recipes use salt, only 4.2% of all uses of any ingredient are salt.
 
 
 
