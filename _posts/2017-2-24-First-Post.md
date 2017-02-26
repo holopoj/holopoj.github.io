@@ -1,7 +1,7 @@
 ---
 layout: post
 title: First post.
-published: false
+published: true
 ---
 {% include mathjs %}
 I'd like to do a series of experiments on compressing sets of discrete items.  The concomitant hope is to discover latent structure within real-world sets.  To give a better idea of what the heck this means, consider a recipe as a set of ingredients:
