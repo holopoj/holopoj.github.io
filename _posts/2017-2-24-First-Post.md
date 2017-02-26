@@ -69,7 +69,7 @@ recipes = json.load(instream)
 
 This code gives us the recipes in an array.  Counting how many times each ingredient is used, and dividing by the number of times any ingredient is used and sorting, we can find the frequency and probability of each ingredient:
 
-Ingredient | Freq. | Prob (0 - 1)
+Ingredient | Freq. | Probability
 ---------- | ----- | -----------
 salt | 18049 | 4.2%
 onions | 7972 | 1.9%
@@ -82,6 +82,7 @@ butter | 4848 | 1.1%
 ground black pepper | 4785 | 1.1%
 all-purpose flour | 4632 | 1.1%
 
+A couple notes.  First, the probability is out of all times any ingredient was mentioned, so even though 18,049 of the 39,774 recipes $(~=45.4%)$ of all recipes use salt, only 4.2% of all uses of any ingredient are salt.
 
 
 
