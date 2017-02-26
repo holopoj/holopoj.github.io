@@ -31,16 +31,7 @@ If we have a large number of recipes, we can start to see patterns, because reci
 
 My goal is to learn hierarchial structures over the patterns of ingredient usage based on ideas from compression.  For instance, if you just send me a recipe using text it will take however many bytes the text takes.  If you and I agree on a set of ingredients that can be used ahead of time to send any possible recipe, then you can send me a recipe by just saying Ingredient 5067, Ingredient 6403, etc.  If we agree on a binary format and there are say 4096 ingredients, then each ingredient can be sent in $$log_2 4096=14$$ bits.
 
-The first optimization we can make is to take into account that each ingredient is not eually likely.  "Onions" appear in many more recipes than does "ground turmeric" for instance.  We start by downloading the ([What's cooking?](https://www.kaggle.com/c/whats-cooking)) data to the local disk, then writing code to load this:
-
-```python
-import json, codecs, sys, collections, random, math
-recipeFile = "data/kaggle_whats_cookin/train.json"
-instream = codecs.open(recipeFile, encoding='utf-8')
-recipes = json.load(instream)
-```
-
-This code gives us the recipes in an array.  The data looks like this:
+The first optimization we can make is to take into account that each ingredient is not eually likely.  "Onions" appear in many more recipes than does "ground turmeric" for instance.  What we need is a large dataset of recipe ingredient lists, so that we can calculate frequencies for each unique ingredient.  We start by downloading the ([What's cooking?](https://www.kaggle.com/c/whats-cooking)) data to the local disk.  The data is split into train.json and test.json.  We'll start with the train.json, which has 39,774 recipes. The data looks like this:
 
 ```
 [
@@ -66,4 +57,22 @@ This code gives us the recipes in an array.  The data looks like this:
       "plain flour",
       "ground pepper",
 ```
+
+There's no amounts or units or directions, but that's perfect for these experiments which focus on sets of items.  The code to load this in Python looks like this:
+
+```python
+import json, codecs, sys
+recipeFile = "data/kaggle_whats_cookin/train.json"
+instream = codecs.open(recipeFile, encoding='utf-8')
+recipes = json.load(instream)
+```
+
+This code gives us the recipes in an array.  We now want to count how many times each ingredient occurs:
+
+```python
+ing2Count = collections.Counter((ingrs for rec in recipes for ingrs in rec['ingredients']))
+```
+
+This gives us a map from ingredient name to its frequency in all of the recipes.
+
 
