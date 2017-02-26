@@ -35,7 +35,35 @@ The first optimization we can make is to take into account that each ingredient 
 
 ```python
 import json, codecs, sys, collections, random, math
-recipeFile = "/home/bryan/Dropbox/projects/paired/data/kaggle_whats_cookin/train.json"
-ins = codecs.open(recipeFile, encoding='utf-8')
-recipes = json.load(ins)
+recipeFile = "data/kaggle_whats_cookin/train.json"
+instream = codecs.open(recipeFile, encoding='utf-8')
+recipes = json.load(instream)
 ```
+
+This code gives us the recipes in an array.  The data looks like this:
+
+```
+[
+  {
+    "id": 10259,
+    "cuisine": "greek",
+    "ingredients": [
+      "romaine lettuce",
+      "black olives",
+      "grape tomatoes",
+      "garlic",
+      "pepper",
+      "purple onion",
+      "seasoning",
+      "garbanzo beans",
+      "feta cheese crumbles"
+    ]
+  },
+  {
+    "id": 25693,
+    "cuisine": "southern_us",
+    "ingredients": [
+      "plain flour",
+      "ground pepper",
+```
+
