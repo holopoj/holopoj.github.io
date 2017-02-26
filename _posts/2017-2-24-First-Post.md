@@ -67,12 +67,21 @@ instream = codecs.open(recipeFile, encoding='utf-8')
 recipes = json.load(instream)
 ```
 
-This code gives us the recipes in an array.  We now want to count how many times each ingredient occurs:
+This code gives us the recipes in an array.  Counting how many times each ingredient is used, and dividing by the number of times any ingredient is used and sorting, we can find the frequency and probability of each ingredient:
 
-```python
-ing2Count = collections.Counter((ingrs for rec in recipes for ingrs in rec['ingredients']))
-```
+Ingredient | Freq. | Prob (0 - 1)
+---------- | ----- | -----------
+salt | 18049 | 4.2%
+onions | 7972 | 1.9%
+olive oil | 7972 | 1.9%
+water | 7457 | 1.7%
+garlic | 7380 | 1.7%
+sugar | 6434 | 1.5%
+garlic cloves | 6237 | 1.5%
+butter | 4848 | 1.1%
+ground black pepper | 4785 | 1.1%
+all-purpose flour | 4632 | 1.1%
 
-This gives us a map from ingredient name to its frequency in all of the recipes.
+
 
 
