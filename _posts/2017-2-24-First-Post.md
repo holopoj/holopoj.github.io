@@ -82,7 +82,9 @@ butter | 4848 | 1.1%
 ground black pepper | 4785 | 1.1%
 all-purpose flour | 4632 | 1.1%
 
-A couple notes.  First, the probability is out of all times any ingredient was mentioned, so even though 18,049 of the 39,774 recipes $$(\approx 45.4\%)$$ of all recipes use salt, only 4.2% of all uses of any ingredient are salt.  Second, the ingredients haven't been fully normalized to a single standard name, so near the top of our list we see both "garlic" and "garlic cloves", this is a real issue, but one that we will overlook for now.
+A couple notes.  First, the probability is out of all times any ingredient was mentioned, so even though 18,049 of the 39,774 recipes $$(\approx 45.4\%)$$ of all recipes use salt, only 4.2% of all ingredient slots of any recipe are filled by salt.  Recipes have more than one ingredient, and they will probably not be repeated.  Second, the ingredients haven't been fully normalized to a single standard name, so near the top of our list we see both "garlic" and "garlic cloves". This is a real issue, but one that we will overlook for now.
+
+The ingredient probabilities allow us to better encode messages about recipes to recipients.  Instead of assigning each ingredient an equal length code, the code lengths can be variable, with more frequent ingredients like onions having a shorter code.  I won't go into the details of codes, but what is important here is that according to Shannon's [coding theory](https://en.wikipedia.org/wiki/Coding_theory), the minimum code length for an item, $$i$$, whose probability is $$p_i$$ will be $$-log_2 p_i$$.
 
 
 
