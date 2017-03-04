@@ -35,7 +35,7 @@ $$-(\mathbb{E}[A,B,D, or E] \times 1.79 + \mathbb{E}[C] \times 1.10)
 = -((1/6 \times 4) \times 1.79 + 1/3 \times 1.10)
 \approx 1.56 
 $$
-Since we need to encode two elements, total message length will be $$2 \times 1.56 = 3.12$$.  So we did in fact save some bits over the encoding scheme that treats each letter equally likely.
+Since we need to encode two elements, total message length will be $$2 \times 1.56 = 3.12$$.  So we did in fact save some bits over the encoding scheme that treats each letter equally likely.  So what was different between these scenarios?  In the first, we assumed the only information we shared with the sender ahead of time was the alphabet.  In the second, we assumed we also shared knowledge about the probabilities of each letter.  However, you may have noticed, we ignored updated information we had about the second set item, once we already decoded the first item.  If the first item decoded was a 'D', then there is no way the second item can be an 'A', or a 'B'.  Let's determine the expected encoding length for messages when we take advantage of this observation.
 
 
 KL Divergence
