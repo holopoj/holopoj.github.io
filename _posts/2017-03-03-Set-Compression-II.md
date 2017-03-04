@@ -25,7 +25,7 @@ print("{}".format(new_set))
 ```
 And generated sets look like this:
 ['C', 'A']       ['E', 'D']        ['A', 'C']       ['A', 'C']      ['B', 'A']
-Strictly speaking we didn't enforce a unique constraint, so we'll use a loose definition of what a "set" is here (more strictly these would be bags).
+Strictly speaking we didn't enforce a unique constraint, so we'll use a loose definition of what a "set" is here (more strictly these would be called bags, or [multisets](https://en.wikipedia.org/wiki/Multiset)).
 If you know the model:
   encoding one pair only takes log2(2) + log2(3) bits = (2.58)
 If you use a unigram model:
