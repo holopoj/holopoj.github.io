@@ -33,7 +33,6 @@ Encoding an 'A', 'B', 'D', or 'E' will require $$-log_2 1/6\approx 1.79$$ bits, 
 
 $$\mathbb{E}[A,B,D, or E] \times 1.79 + \mathbb{E}[C] \times 1.10
 $$
-\[12\]
 
 If you know the model:
   encoding one pair only takes log2(2) + log2(3) bits = (2.58)
