@@ -23,7 +23,9 @@ chosen_set = msets[randint(0,1)]
 new_set = [chosen_set[randint(0, len(chosen_set)-1)], chosen_set[randint(0, len(chosen_set))-1]]
 print("{}".format(new_set))
 ```
-
+And generated sets look like this:
+['C', 'A']       ['E', 'D']        ['A', 'C']       ['A', 'C']      ['B', 'A']
+Strictly speaking we didn't enforce a unique constraint, so we'll use a loose definition of what a "set" is here (more strictly these would be bags).
 If you know the model:
   encoding one pair only takes log2(2) + log2(3) bits = (2.58)
 If you use a unigram model:
