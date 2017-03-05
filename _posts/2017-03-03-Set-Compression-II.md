@@ -40,14 +40,16 @@ Bringing our total for encoding both items to $$2.25 + 1.81 = 4.06$$ bits. So we
 
 But wait, there's more.  We can ask the sender to inform us about whether m1 or m2 was chosen before sending any information about the items.  Then we can encode each item in only $$-log_2 1/3 \approx 1.58$$ bits.  Encoding of the choice between m1 or m2 is 1 bit, because each is equally likely.  So, our total encoding length will be $$1 + 1.58 \times 2 = 4.16$$ bits.  Another significant improvement.  In fact, this is the optimal encoding scheme for this data generating method, of course, assuming you can send fractions of a bit at a time.  
 
-The entropy of a message about a set will be $$H(S) = \sum_{s \in S} p(s) log 1/p(s)$$, where $$S$$ the set of all possible sets over the items we are considering (i.e., the power set over the set of items).  An encoding scheme whose expected length matches the entropy, will be optimal.
+The entropy of a message about a set will be $$H(S) = \sum_{s \in S} p(s) log 1/p(s)$$, where $$S$$ the set of all possible sets over the items we are considering (i.e., the power set over the set of items).  An encoding scheme whose expected length matches the entropy, will be optimal.  What then is the entropy of the data generating procedure for sets we are considering?  We will need to be able to compute the probabilities of different sets that may be generated.  Those sets which may not be generated, will have $$p(s)=0$$ and their contribution to the entropy is considered zero.
+
+
 
 sum s \in S p_true(s) * log (p_true(s) / p_codec(s))
 p_true(s) * -(log p_codec(s) / p_true(s))\
 p_true(s) * -(-log 1/p_codec(s) + log 1/p_true(s))
 p_true(s) * (log 1/p_codec(s) - log 1/p_true(s))
 
-
+Approximating entropy calculation through sampling?
 
 
 KL Divergence
